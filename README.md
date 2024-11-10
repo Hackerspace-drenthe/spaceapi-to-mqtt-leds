@@ -14,3 +14,10 @@ The actual LEDs are then set using the generic MQTT to WS2812 LED on an ESP32.
 Source code for the MQTT listener at https://github.com/Hackerspace-drenthe/esp32-mqtt-ws2812b-driver
 
 
+Requires:
+ `pip install paho-mqtt` 
+
+Running:
+ `python3 main.py` 
+
+ 
