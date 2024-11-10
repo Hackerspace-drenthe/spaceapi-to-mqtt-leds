@@ -59,6 +59,8 @@ sample = {
 #     7x, emmen
 # }
 
+# this is the mapping to the LEDs on the physical map. 
+# First LED = 1, this used to be the hackerspace in Leeuwarden
 spaces = {
     "Maakplek": 2,
     "Hackerspace Drenthe": 4,
