@@ -105,7 +105,8 @@ for space in api_data:
 json_data = {
     "led_data": leds
 }
-print(json_data)
+
+print("Publishing LED colours:", json_data)
 
 if json_data:
     mqtt_broker = "mqtt.hackerspace-drenthe.nl"
