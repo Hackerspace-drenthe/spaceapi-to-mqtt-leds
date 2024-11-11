@@ -3,4 +3,5 @@ services:
  main:
    build: .
    stop_grace_period: 0s
-   
+   volumes:
+     - .:/usr/src/app
