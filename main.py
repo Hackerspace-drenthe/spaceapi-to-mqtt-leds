@@ -62,25 +62,25 @@ sample = {
 # this is the mapping to the LEDs on the physical map. 
 # First LED = 1, this used to be the hackerspace in Leeuwarden
 spaces = {
-    "Maakplek": 2,
-    "Hackerspace Drenthe": 4,
-    "TkkrLab": 6,
-    "Hack42": 8,
-    "Hackerspace Nijmegen": 9,
-    "NURDspace": 10,
-    "Bitlair": 11,
-    "RandomData": 12,
-    "LAG": 13,
-    "The Space Leiden": 14,
-    "RevSpace": 15,
-    "PixelBar": 16,
-    "Hackalot": 19,
-    "TDvenlo": 21,
-    "ACKspace": 23,
-    "Hackerspace Drenthe (Emmmen)": 31
+    "Maakplek": 3,
+    "Hackerspace Drenthe": 5,
+    "TkkrLab": 7,
+    "Hack42": 9,
+    "Hackerspace Nijmegen": 10,
+    "NURDspace": 11,
+    "Bitlair": 12,
+    "RandomData": 13,
+    "LAG": 14,
+    "The Space Leiden": 15,
+    "RevSpace": 16,
+    "PixelBar": 17,
+    "Hackalot": 20,
+    "TDvenlo": 22,
+    "ACKspace": 24,
+    "Hackerspace Drenthe (Emmmen)": 32
 }
 
-leds = [0 for _ in range(31*3)]
+leds = [0 for _ in range(32*3)]
 
 
 for space in api_data:
@@ -95,16 +95,18 @@ for space in api_data:
         if "open" in space["data"]["state"]:
             if space["data"]["state"]["open"]:
                 color = [0, 255, 0]
-                leds[(led-1)*3+1] = 255
+                leds[(led-1)*3] = 255
             else:
                 color = [255, 0, 0]
-                leds[(led-1)*3] = 255
+                leds[(led-1)*3+1] = 255
 
         print(space["data"]["space"], " ", led, color)
 
 json_data = {
     "led_data": leds
 }
+
+
 
 print("Publishing LED colours:", json_data)
 
